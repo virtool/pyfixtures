@@ -29,6 +29,9 @@ jobs:
       - name: Install Poetry
         run: pip3 install poetry
 
+      - name: Install Dependencies
+        run: poetry install
+
       - name: Unit Tests
         run: poetry run pytest
 
