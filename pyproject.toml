@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "py-fixtures"
+name = "pyfixtures"
 version = "0.6.0"
 description = "Pytest style fixtures outside of Pytest."
 authors = ["Ian Boyes", "Blake Smith"]
@@ -11,7 +11,7 @@ classifiers = [
     "Programming Language :: Python :: 3.8"
 ]
 packages = [
-    { include = "py_fixtures" },
+    { include = "pyfixtures" },
 ]
 
 [tool.poetry.dependencies]
