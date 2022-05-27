@@ -1,11 +1,10 @@
-"""Exceptions relating to workflow fixtures."""
 from typing import Callable
 
 from ._utils import get_source_location
 
 
 class FixtureMultipleYield(ValueError):
-    """Raised when a generator workflow fixture yields more than once."""
+    """Raised when a generator fixture yields more than once."""
 
 
 class FixtureNotFound(KeyError):
