@@ -2,7 +2,6 @@ import asyncio
 
 import pytest
 from fixtures import FixtureScope, fixture, runs_in_new_fixture_context
-from virtool_workflow import Workflow
 
 
 @runs_in_new_fixture_context(copy_context=False)
@@ -170,19 +169,15 @@ async def test_mutable_fixture_semantics():
     def dictionary():
         return {}
 
-    workflow = Workflow()
-
-    @workflow.step
     async def step1(dictionary):
         return dictionary
 
-    @workflow.step
     async def step2(dictionary):
         return dictionary
 
     async with FixtureScope() as scope:
-        step1_ = await scope.bind(workflow.steps[0].function)
-        step2_ = await scope.bind(workflow.steps[1].function)
+        step1_ = await scope.bind(step1)
+        step2_ = await scope.bind(step2)
 
         d3 = await step1_()
         d4 = await step2_()
