@@ -11,7 +11,7 @@ classifiers = [
     "Programming Language :: Python :: 3.8"
 ]
 packages = [
-    { include = "fixtures" },
+    { include = "py_fixtures" },
 ]
 
 [tool.poetry.dependencies]

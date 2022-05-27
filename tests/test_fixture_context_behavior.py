@@ -1,7 +1,7 @@
 import asyncio
 
 import pytest
-from fixtures import fixture_context, get_fixtures, runs_in_new_fixture_context
+from py_fixtures import fixture_context, get_fixtures, runs_in_new_fixture_context
 
 
 @pytest.fixture

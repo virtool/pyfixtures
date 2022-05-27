@@ -1,4 +1,4 @@
-from fixtures import (
+from py_fixtures import (
     Fixture,
     fixture,
     fixture_context,
