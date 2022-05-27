@@ -1,0 +1,26 @@
+# Publish Docker image & PyPi package when a GitHub release is made
+name: publish
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  pypi-publish:
+    runs-on: ubuntu-latest
+    container: python:3.8
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install poetry
+        run: pip install poetry
+
+      - name: Bump Version
+        run: poetry version ${{github.event.release.tag_name}}
+
+      - name: Prepare Distribution
+        run: poetry build
+
+      - name: Deploy To PyPi
+        run: poetry publish -u ${{ secrets.PYPI_USERNAME }} -p ${{ secrets.PYPI_TOKEN }}
