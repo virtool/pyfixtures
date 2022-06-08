@@ -1,14 +1,14 @@
-# Fixtures
+# PyFixtures
 
 [Pytest](https://docs.pytest.org/en/7.1.x/) style [fixtures](https://docs.pytest.org/en/6.2.x/fixture.html) outside of Pytest.
 
 ```python
 import asyncio
 from pathlib import Path
-from py_fixtures import fixture, FixtureScope
+from pyfixtures import fixture, FixtureScope
 
 @fixture
-def tmpdir() -> Path:
+def tmpdir() -> path:
     path = Path("temp")
     path.mkdir()
     try:
